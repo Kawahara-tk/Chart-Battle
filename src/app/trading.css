@@ -1,0 +1,188 @@
+.trade-panel {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+}
+.order-panel-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.order-panel-heading h2 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+}
+.order-panel-heading > span {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.trade-position {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 14px;
+  padding: 15px 0;
+  margin: 12px 0 17px;
+  border-block: 1px solid var(--border);
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+.position-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px;
+}
+.trade-position strong {
+  color: var(--text);
+  font: 0.875rem var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.position-cash {
+  text-align: right;
+}
+.position-cash strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 1rem;
+}
+.holdings-gauge {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 3px;
+  margin-top: 6px;
+  padding: 3px;
+  border: 1px solid #d5e2dc;
+  border-radius: 6px;
+}
+.holdings-gauge > span {
+  height: 10px;
+  border-radius: 2px;
+  background: #e8efec;
+}
+.holdings-gauge > .is-filled {
+  background: var(--green);
+}
+.order-quote {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+.order-quote > span {
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+.order-quote strong {
+  font: 0.9375rem var(--font-mono);
+}
+.order-quote small {
+  color: var(--muted);
+  font: 0.75rem var(--font-sans);
+  margin-left: 5px;
+}
+.trade-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 17px;
+}
+.trade-buttons button {
+  border: 0;
+  border-radius: 8px;
+  min-height: 46px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  padding: 10px 6px;
+  touch-action: manipulation;
+  user-select: none;
+}
+.button-buy {
+  background: #cfe8da;
+  color: #235c43;
+}
+.button-buy:hover:not(:disabled) {
+  background: #bcdfcc;
+}
+.button-sell {
+  background: #f8dfc8;
+  color: #82502a;
+}
+.button-sell:hover:not(:disabled) {
+  background: #f0d1b5;
+}
+.order-help {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-top: 11px;
+}
+.trade-feedback {
+  color: #506e61;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  margin-top: 10px;
+  min-height: 20px;
+}
+@media (max-width: 1000px) {
+  .trade-panel {
+    padding: 18px;
+  }
+}
+@media (max-width: 760px) {
+  .play-screen .trade-panel {
+    box-shadow: 0 3px 14px #30453a04;
+  }
+  .trade-position {
+    margin: 7px 0 12px;
+    padding: 10px 0;
+  }
+  .order-panel-heading > span {
+    font-size: 0.8125rem;
+  }
+  .trade-panel .trade-feedback {
+    margin-top: 7px;
+  }
+}
+@media (max-width: 520px) {
+  .play-screen .trade-panel {
+    position: fixed;
+    z-index: 5;
+    bottom: max(10px, env(safe-area-inset-bottom));
+    left: 12px;
+    right: 12px;
+    display: grid;
+    gap: 9px;
+    padding: 12px 14px;
+    border-color: #d4dfda;
+    box-shadow: 0 -5px 25px #263a3510;
+  }
+  .play-screen .trade-position {
+    margin: 0;
+    padding: 0 0 7px;
+  }
+  .play-screen .trade-buttons {
+    margin-top: 0;
+  }
+  .play-screen .order-help,
+  .play-screen .trade-feedback {
+    margin: 0;
+  }
+  .order-panel-heading {
+    display: none;
+  }
+  .trade-position {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+  .trade-buttons button {
+    font-size: 1rem;
+    min-height: 48px;
+  }
+}
